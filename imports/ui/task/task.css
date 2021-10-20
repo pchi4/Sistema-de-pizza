@@ -1,0 +1,73 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    background-color: #536aec !important;
+    color: rgb(252, 243, 243);
+}
+
+.formulario{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+h5{
+    font-weight: bold;
+    font-size: 26px;
+    padding-top: 10px;
+}
+
+span{
+    color: rgb(255, 238, 7);
+  font-size: 18px;
+}
+
+.grid{
+    width: 800px;
+    height: 350px;
+    box-shadow: 0 0 1em rgb(36, 34, 34);
+    color: white;
+    padding: 40px;
+    margin-top: 100px;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #536aec !important;
+    
+}
+
+span :hover {
+    cursor: pointer;
+}
+
+.click{
+    color: white !important; 
+}
+
+.tabela{
+    border-radius: 5px;
+    padding-top: 80px;
+}
+
+.table-t{
+    margin: 0 auto;
+}
+
+td{
+    font-size: 26px;
+}
+
+tr td{
+    color: black;
+}
+
+#teste{
+    text-decoration: none;
+    border: none;
+    color: white;
+    background-color: rgb(33, 33, 33)
+}

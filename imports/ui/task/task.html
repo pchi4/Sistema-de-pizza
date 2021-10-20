@@ -1,0 +1,92 @@
+<template name="task">
+    <div>
+        <nav class="navbar navbar-dark nav">
+            <a class="navbar-brand color">Devedores de Pizzas da CDS</a>
+            <button class="btn btn-danger logout">Sair</button>
+        </nav>
+    </div>
+
+    <div class="col-sm-12 form-group align-items-center formulario">
+        <div class="grid"> 
+            <div>
+                <form>
+                    <label>
+                        <h5>Cadastre um novo usuario</h5>
+                    </label>
+
+                    <select class="form-control mt-2" id="devedores">
+                        <option value="">Selecione o usuário</option>
+                        {{#each devedores}}
+                        <option value="{{_id}}">{{nome}}</option>
+                        {{/each}}
+                    </select>
+
+                    <span>Se não encontrou o usuario, <a class="click" data-toggle="modal" data-target="#modalDevedor" id="modal-devedores">clique aqui</a> para cadastrar</span><br>
+
+                    <label>
+                        <h5>Números de pizzas</h5>
+                    </label>
+
+                    <input type="text" name="text" class="form-control mt-2" id="inputText"
+                        placeholder="Adicione quantidade de pizzas">
+
+                    <div class="mt-4">
+                        <button type="button" id="teste" class="btn btn-primary float-right">Cadastrar</button>
+                    </div>  
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-5 table-t tabela">
+        <div class="table table-responsive ">
+            <table id="myTable" class="table table-striped">
+                <thead class="thead-dark ">
+                    <tr>
+                        <th class="col-sm-5">Usuarios</th>
+                        <th class="col-sm-1">Pizzas</th>
+                        <th class="col-sm-1"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each task}}
+                        <tr>
+                            <td> {{nome}}</td>
+                            <td> {{pizzas}}</td>
+                            <td class="d-flex justify-content-around">  
+                                <button title="Adicionar" type="button" class="btn add" ><i class="fas fa-plus-circle " data-_id={{_id}} data-text={{pizzas}} style="font-size: 26px;"></i></button>
+                                <button title="Subtrair" type="button" class="btn sub"><i class="fas fa-minus-square"  data-_id={{_id}} data-text={{pizzas}} style="font-size: 26px;"></i></button>
+                                <button title="Remove" type="button" class="btn remove"><i class="fas fa-trash-alt "  id="{{_id}}" style="font-size: 26px;"></i></button>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDevedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cadastrar devedor</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form form-group action="">
+                        <div class="form-group mb-3">
+                            <label>Nome do Devedor</label>
+                            <input class="form-control" id="nameDevedor" placeholder="Digite seu nome completo">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="cadastrarDevedor">Salvar e sair</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

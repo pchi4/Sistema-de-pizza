@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(240, 221, 221);
+    font-family: 'Poppins', sans-serif;
+   }
+
+.navbar{
+    background-color: rgb(240, 221, 221);
+    color: white;
+}
+
+.form-login{
+    background-color: rgb(56, 63, 65);
+    margin: 0 auto;
+    color: white;
+    font-size: 24px;
+    width: 500px;
+    border:  1px solid black;
+    padding: 40px 30px 70px 30px;
+    border-radius: 5px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    box-shadow: 0 0 1em rgb(36, 34, 34);
+}
+
+
+.logo-login{
+    /* padding-left: 600px; */
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+#title-login{
+    padding-top: 30px;
+    font-size: 38px;
+    text-align: center;
+}
+
+
+
