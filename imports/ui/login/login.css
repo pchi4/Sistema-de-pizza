@@ -8,25 +8,37 @@ body {
     font-family: 'Poppins', sans-serif;
    }
 
-.navbar{
+/* .navbar{
     background-color: rgb(240, 221, 221);
     color: white;
+} */
+
+.y{
+    background-image: url(/img/login.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+   width: 100vw;
+    height: 100vh
 }
 
 .form-login{
-    background-color: rgb(56, 63, 65);
+    background-color: rgba(0, 0, 0, 0.631);
     margin: 0 auto;
     color: white;
     font-size: 24px;
     width: 500px;
-    border:  1px solid black;
+    border:  1px solid rgba(0, 0, 0, 0.097);
     padding: 40px 30px 70px 30px;
     border-radius: 5px;
-    margin-top: 100px;
+    margin-top: 200px;
     margin-bottom: 100px;
     box-shadow: 0 0 1em rgb(36, 34, 34);
 }
 
+input [type=text] {
+    border: none;
+    border-bottom: 2px solid red;
+}
 
 .logo-login{
     /* padding-left: 600px; */
@@ -37,8 +49,9 @@ body {
 }
 
 #title-login{
-    padding-top: 30px;
-    font-size: 38px;
+    padding-top: 200px;
+    font-size: 50px;
+    font-weight: bold;
     text-align: center;
 }
 

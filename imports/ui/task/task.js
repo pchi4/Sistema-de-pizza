@@ -5,6 +5,7 @@ import { $ } from 'meteor/jquery'
 
 import './task.html'
 import './task.css'
+import swal from 'sweetalert';
 
 
 Template.task.events({
@@ -13,28 +14,40 @@ Template.task.events({
     event.preventDefault();
 
     const nome = document.getElementById('nameDevedor').value.toUpperCase()
+    const nomeUsuario = nome.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
     const pizzas = 0
+
+    console.log(nomeUsuario)
+    const verificar = Devedores.findOne({"nome":nomeUsuario})
+
+    console.log(verificar)
+
+    if(!verificar){
+      const usuario = {
+        nome:nomeUsuario,
+        pizzas
+      }
+      if(nomeUsuario){
+        Devedores.insert(usuario)
+        swal({
+          title: "Usuario cadastrado com sucesso",
+          icon: "success",
+        });
+        $('#modalDevedor').modal("hide")
+      }else{
+        swal({
+          title: "Pro favor insira um nome",
+          icon: "error",
+        });
+      }
   
-    const usuario = {
-      nome,
-      pizzas
-    }
-    
-    if(nome){
-      Devedores.insert(usuario)
-      swal({
-        title: "Usuario cadastrado com sucesso",
-        icon: "success",
-      });
+  
+      
+
     }else{
-      swal({
-        title: "Pro favor insira um nome",
-        icon: "error",
-      });
+      swal("Já existe um usuário com esse nome")
     }
-
-
-    $('#modalDevedor').modal("hide")
+  
     
 
   },
@@ -48,13 +61,19 @@ Template.task.events({
     var value = document.getElementById('inputText').value
 
     
-    var { pizzas } = Devedores.findOne({_id});
-    
-    var count = parseInt(value) + pizzas
-   
+    if(_id && value){
+      var { pizzas } = Devedores.findOne({_id});
+      
+      var count = parseInt(value) + pizzas
+     
+      
+  
+       Devedores.update({_id},{$set : {pizzas : count}})
 
 
-     Devedores.update({_id},{$set : {pizzas : count}})
+    }  else{
+      swal("Por favor, preencha todos os campos!")
+    }
 
 
 
@@ -64,39 +83,18 @@ Template.task.events({
     event.preventDefault();
     let{_id, text} = event.target.dataset;
     let count = parseInt(text)
-    
-    swal({
-      title: "Tem certeza que você quer adicionar uma pizza?",
-      icon: "warning",
-      buttons: ["Não","Sim"],
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-
+  
         Devedores.update({_id}, {$set: {pizzas: count + 1}})
 
         swal("Pizza adicionada com sucesso!", {
           icon: "success",
-        });
-      } else {
-        
-      }
-    }); 
+        }); 
   },
 
   'click .sub'(event){
     event.preventDefault();
     let{_id, text} = event.target.dataset;
     let count = parseInt(text)
-
-
-    swal({
-      title: "Tem certeza que você quer remover uma pizza?",
-      icon: "warning",
-      buttons: ["Não","Sim"],
-    })
-    .then((willDelete) => {
-      if (willDelete) {
 
         if(count > 0){
           Devedores.update({_id}, {$set: {pizzas: count - 1}})
@@ -109,11 +107,7 @@ Template.task.events({
         }else{
           swal("Não é possivel valor negativo")
         }
-       
-      } else {
-        
-      }
-    });
+
   },
 
   'click .remove'(event) {
@@ -170,7 +164,7 @@ Template.task.events({
 
 Template.task.helpers({
   task() {
-    const a = Devedores.find({}).fetch()
+    const a = Devedores.find({},{sort:{nome:1}}).fetch()
     console.log(a)
     return a
   },

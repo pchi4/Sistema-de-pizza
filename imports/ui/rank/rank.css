@@ -4,12 +4,51 @@
     box-sizing: border-box;
 }
 
-h1{
-    padding-top: 50px;
+ .t{
+    background-image: url(/img/trofeu.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+   width: 100vw;
+    height: 100vh; 
+} 
+
+.nav-rank{
+    background-color: rgb(28, 27, 27) !important;
+    padding: 20px;
+}
+
+#title-ranking{
+    color: rgb(250, 242, 231);
+    font-size: 40px;
+    padding-top: 80px;
     text-align: center;
+    font-weight: bolder;
     
 }
 
+.rank-tabela{
+    margin: 0 auto;
+    margin-top: 180px;
+}
+
+
+#scroll{
+
+float:left;
+width:1000px;
+overflow-y: auto;
+height: 388px;
+}
+
+.paginação{
+    padding-right: 630px;
+}
+
+#img-money{
+    z-index: -1;
+    width: 600px;
+    height: 60vh;
+}
 
 .a{
 
@@ -18,17 +57,6 @@ h1{
     
 }
 
-.trofeu-logo{
-    width: 500px;
-    margin-left: 30px;
-    margin-top: 130px;
-    z-index: -1;
-    transform: rotate(330deg);
-}  
-
-.hero-logo{
-    margin-top: 300px;
-    width: 500px;
-    height: 500px;
-    z-index: -1;
-}  
+td{
+    color: blanchedalmond;
+}

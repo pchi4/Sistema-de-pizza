@@ -6,7 +6,8 @@
 }
 
 .navbar{
-    background-color: #536aec !important;
+    padding: 20px;
+    background-color: #536aec ;
     color: rgb(252, 243, 243);
 }
 
@@ -21,10 +22,20 @@ h5{
     font-size: 26px;
     padding-top: 10px;
 }
+.k{
+    display: flex;
+    justify-content: space-between;
+}
 
 span{
     color: rgb(255, 238, 7);
   font-size: 18px;
+}
+
+.text-color{
+    font-size: 25px;
+    color: black;
+ 
 }
 
 .grid{
@@ -34,10 +45,10 @@ span{
     color: white;
     padding: 40px;
     margin-top: 100px;
+    margin-bottom: 80px;
     align-items: center;
     border-radius: 20px;
     background-color: #536aec !important;
-    
 }
 
 span :hover {
@@ -48,14 +59,27 @@ span :hover {
     color: white !important; 
 }
 
-.tabela{
-    border-radius: 5px;
-    padding-top: 80px;
+.tabela-task{
+   
+    float:left;
+    width:1000px;
+    overflow-y: auto;
+    height: 388px;
 }
 
-.table-t{
-    margin: 0 auto;
+#img-1{
+    width: 700px;
+    height: 500px;
+    z-index: -1;
 }
+
+
+#img-2{
+    width: 700px;
+    height: 500px;
+    z-index: -1;
+}
+
 
 td{
     font-size: 26px;
@@ -70,4 +94,12 @@ tr td{
     border: none;
     color: white;
     background-color: rgb(33, 33, 33)
+}
+
+.logout{
+    padding: 10px 30px;
+}
+
+#title-cad{
+    padding: 30px;
 }

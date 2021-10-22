@@ -5,7 +5,7 @@ import { Devedores } from '../../api/devedores/devedores'
 
 Template.rank.helpers({
     task() {
-      const a = Devedores.find({}).fetch()
+      const a = Devedores.find({}, {sort:{pizzas: -1}}).fetch()
       console.log(a)
       return a
     },
