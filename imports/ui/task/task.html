@@ -1,8 +1,13 @@
 <template name="task">
+   <div class="u">
     <div>
-        <nav class="navbar navbar-dark nav">
-            <a class="navbar-brand color">Devedores de Pizzas da CDS</a>
-            <button class="btn btn-danger logout">Sair</button>
+        <nav class="navbar navbar-darkk nav-task2">
+            <span class="navbar-brand color">Devedores de Pizzas da CDS</span>
+            <div class=" nav-task">
+
+                <a class="navbar-brand color btn btn-dark" href="/rank">Ranking</a>
+                <button class="btn btn-dark logout">Sair</button>
+            </div>
         </nav>
     </div>
 
@@ -39,10 +44,7 @@
     </div>
 
     <div class="k">
-        <img id="img-1" src="/img/arvore-logo.png" alt="">
-
         <div class="col-sm-5 table-t tabela-task">
-            
             <div class="table table-responsive ">
                 <table id="myTable" class="table table-striped">
                     <thead class="thead-dark ">
@@ -60,14 +62,14 @@
                                 <td class="col-sm-3 text-center">
                                     
                                     <div class="row">
-                                        <button title="Adicionar" type="button" class="btn add col text-center" ><i class="fas fa-plus-circle" data-_id={{_id}} data-text={{pizzas}} style="font-size: 26px;"></i></button>
+                                        <button title="Subtrair" type="button" class="btn sub col text-center"><i class="fas fa-minus-square"  data-_id={{_id}} data-text={{pizzas}} style="font-size: 26px;"></i></button>
                                        <span class="col text-center  text-color"> {{pizzas}}</span>
-                                     <button title="Subtrair" type="button" class="btn sub col text-center"><i class="fas fa-minus-square"  data-_id={{_id}} data-text={{pizzas}} style="font-size: 26px;"></i></button>
+                                       <button title="Adicionar" type="button" class="btn add col text-center" ><i class="fas fa-plus-circle" data-_id={{_id}} data-text={{pizzas}} style="font-size: 26px;"></i></button>
                                     </div>
                                     
                                 </td>
                                 <td class="col-sm-3 text-center">  
-                                    <button title="Remove" type="button" class="btn remove"><i class="fas fa-trash-alt "  id="{{_id}}" style="font-size: 26px;"></i></button>
+                                    <button title="Remove" type="button" class="btn remove"><i class="fas fa-trash-alt "  id="{{_id}}" style="font-size: 26px; color:rgb(172, 36, 12);"></i></button>
                                 </td>
                             </tr>
                         {{/each}}
@@ -75,8 +77,6 @@
                 </table> 
             </div>
         </div>
-    
-        <img id="img-2" src="/img/Untitled.png" alt="">
     </div>
     
     <div class="modal fade" id="modalDevedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -103,4 +103,6 @@
             </div>
         </div>
     </div>
+</div>
+
 </template>

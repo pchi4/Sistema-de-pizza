@@ -3,15 +3,18 @@
     <div>
         <nav class="navbar navbar-dark nav-rank">
             <a class="navbar-brand color">Devedores de Pizzas da CDS</a>
+            {{#if logado}}
+                 <button class="btn btn-primary mr-3" id="voltar">Voltar</button>
+           {{/if}}
         </nav>
     </div>
         
     <h1 id="title-ranking">Ranking de dívidas</h1>
         
     <div class="a">
-       <!--  <div>
-            <img id="img-rank" src="/img/rank-logo.png" alt="">
-        </div> -->
+        <div>
+            <img id="img-rank" src="/img/trofeu-logo.png" alt="">
+        </div> 
 
         <div data-spy="scroll" data-target="#navbar-exemplo2" data-offset="0" id="scroll" class="col-sm-5 table-t rank-tabela">
             <div class="table table-responsive ">
@@ -20,24 +23,61 @@
                         <tr class="text-center">
                             <th class="col-sm-5">Usuarios</th>
                             <th class="col-sm-1">Pizzas</th>
+                            {{ #if logado}}
+                            <th class="col-sm-1">Editar</th>
+                            {{/if}}
                         </tr>
                     </thead>
+
                     <tbody>
                         {{#each task}}
-                            <tr class="text-center">
+                            <tr class="text-center" data-nome={{nome}} data-pizzas={{pizzas}} data-_id={{_id}}>
                                 <td> {{nome}}</td>
                                 <td> {{pizzas}}</td>
+
+                                {{#if logado}}
+                                    
+                                 <td><button title="Subtrair" type="button" class="btn sub col text-center userButton"><i class="fas fa-user-edit" data-_id={{_id}} data-text={{nome}} data-toggle="modal" data-target="#modalEdit" style="font-size: 26px;  "></i></button></td> 
+                                
+                                {{/if}}
+                
                             </tr>
                         {{/each}}
                     </tbody>
                 </table>
             </div>
         </div>
-
-        <!-- <div>
-            <img id="img-money" src="/img/money-logo.png" alt="">
-        </div> -->
     </div>
+</div>
 
+
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Criar conta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form form-group action="">
+                    <div class="form-group mb-3">
+                        <label>Nome do Usuario</label>
+                        <input class="form-control" id="nameDev" data-_id={{devedor._id}} placeholder="Digite seu nome completo" value={{devedor.nome}}> 
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Quantidade de pizzas</label>
+                        <input type="number" class="form-control" id="numberPizza" value={{devedor.pizzas}} data-_id={{devedor._id}}
+                            placeholder="Digite a Quantidade">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" id="editarDe">Editar</button>
+            </div>
+        </div>
+    </div>
 </div>
 </template>

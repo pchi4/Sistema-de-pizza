@@ -10,7 +10,7 @@ import swal from 'sweetalert';
 
 Template.task.events({
   'click #cadastrarDevedor'(event){
-    console.log('passei aqui')
+  
     event.preventDefault();
 
     const nome = document.getElementById('nameDevedor').value.toUpperCase()
@@ -82,6 +82,7 @@ Template.task.events({
   'click .add'(event){
     event.preventDefault();
     let{_id, text} = event.target.dataset;
+    
     let count = parseInt(text)
   
         Devedores.update({_id}, {$set: {pizzas: count + 1}})

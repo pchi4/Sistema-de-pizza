@@ -5,12 +5,15 @@
 }
 
  .t{
-    background-image: url(/img/trofeu.jpg);
+    background-image: url(/img/rank.jpg);
     background-repeat: no-repeat;
     background-size:cover;
-   width: 100vw;
+    width: 100vw;
     height: 100vh; 
+    z-index: -1;
 } 
+
+table tbody td { color: rgb(49, 49, 49); }
 
 .nav-rank{
     background-color: rgb(28, 27, 27) !important;
@@ -18,17 +21,18 @@
 }
 
 #title-ranking{
-    color: rgb(250, 242, 231);
-    font-size: 40px;
+    color: rgb(17, 17, 17);
+    font-size: 85px;
     padding-top: 80px;
     text-align: center;
     font-weight: bolder;
-    
+    -webkit-text-stroke-width: 2.5px; /* largura da borda */
+    -webkit-text-stroke-color: rgb(250, 240, 240); /* cor da borda */
 }
 
 .rank-tabela{
     margin: 0 auto;
-    margin-top: 180px;
+    margin-top: 240px;
 }
 
 
@@ -53,10 +57,17 @@ height: 388px;
 .a{
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     
 }
 
-td{
-    color: blanchedalmond;
+#img-rank{
+    margin-top: 160px;
+    margin-left: 150px;
+    width: 500px;
+    height: 500px;
+}
+
+#voltar{
+    font-size: 20px;
 }

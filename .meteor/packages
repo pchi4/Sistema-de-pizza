@@ -27,3 +27,4 @@ ostrio:flow-router-extra
 kadira:blaze-layout
 jquery@1.11.11
 iron:router
+session

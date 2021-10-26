@@ -5,10 +5,29 @@
     box-sizing: border-box;
 }
 
-.navbar{
+.u{
+    background-image: url(/img/pizza-logo.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+   width: 100vw;
+    height: 100vh; 
+}
+
+.nav-task{
+    display: flex;
+    justify-content: end;
+   
+}
+
+.nav-task2{
+    
     padding: 20px;
-    background-color: #536aec ;
-    color: rgb(252, 243, 243);
+    background-color: #c0858565 ;
+}
+
+.nav-task2 span{
+    color: white;
+    font-size: 24px;
 }
 
 .formulario{
@@ -17,6 +36,10 @@
     
 }
 
+table tbody td { color: rgb(63, 63, 2); }
+
+table tbody { background-color: rgba(255, 255, 255, 0.789); }
+
 h5{
     font-weight: bold;
     font-size: 26px;
@@ -24,10 +47,10 @@ h5{
 }
 .k{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-span{
+#title-cad{
     color: rgb(255, 238, 7);
   font-size: 18px;
 }
@@ -48,7 +71,7 @@ span{
     margin-bottom: 80px;
     align-items: center;
     border-radius: 20px;
-    background-color: #536aec !important;
+    background-color: #536aec7c !important;
 }
 
 span :hover {
@@ -56,7 +79,7 @@ span :hover {
 }
 
 .click{
-    color: white !important; 
+    color: rgba(255, 255, 255, 0.912) !important; 
 }
 
 .tabela-task{
