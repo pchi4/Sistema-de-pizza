@@ -50,6 +50,7 @@ Template.task.events({
   
     
 
+
   },
   
   'click #teste'(event){

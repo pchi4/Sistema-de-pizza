@@ -4,7 +4,7 @@
         <nav class="navbar navbar-dark nav-rank">
             <a class="navbar-brand color">Devedores de Pizzas da CDS</a>
             {{#if logado}}
-                 <button class="btn btn-primary mr-3" id="voltar">Voltar</button>
+                 <button class="btn btn-primary mr-3" id="voltar"><i class="fas fa-arrow-left"></i></button>
            {{/if}}
         </nav>
     </div>
@@ -18,8 +18,8 @@
 
         <div data-spy="scroll" data-target="#navbar-exemplo2" data-offset="0" id="scroll" class="col-sm-5 table-t rank-tabela">
             <div class="table table-responsive ">
-                <table id="myTable" class="table table-striped">
-                    <thead class="thead-dark ">
+                <table id="myTable" class="table">
+                    <thead class="thead-dark thead-rank ">
                         <tr class="text-center">
                             <th class="col-sm-5">Usuarios</th>
                             <th class="col-sm-1">Pizzas</th>
@@ -29,15 +29,15 @@
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody class="tbody-rank">
                         {{#each task}}
                             <tr class="text-center" data-nome={{nome}} data-pizzas={{pizzas}} data-_id={{_id}}>
-                                <td> {{nome}}</td>
-                                <td> {{pizzas}}</td>
+                                <td class="col-sm-5"> {{nome}}</td>
+                                <td class="col-sm-1"> {{pizzas}}</td>
 
                                 {{#if logado}}
                                     
-                                 <td><button title="Subtrair" type="button" class="btn sub col text-center userButton"><i class="fas fa-user-edit" data-_id={{_id}} data-text={{nome}} data-toggle="modal" data-target="#modalEdit" style="font-size: 26px;  "></i></button></td> 
+                                 <td class="col-sm-1" ><button title="Subtrair" type="button" class="btn sub col text-center userButton"><i class="fas fa-user-edit" data-_id={{_id}} data-text={{nome}} data-toggle="modal" data-target="#modalEdit" style="font-size: 26px;  "></i></button></td> 
                                 
                                 {{/if}}
                 

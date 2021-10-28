@@ -14,7 +14,7 @@ body {
 } */
 
 .y{
-    background-image: url(/img/login.jpg);
+    background-image: url(/img/pexels-athena-2180877.jpg);
     background-repeat: no-repeat;
     background-size:cover;
    width: 100vw;
@@ -49,10 +49,14 @@ input [type=text] {
 }
 
 #title-login{
+    
+    color: rgb(240, 233, 231);
     padding-top: 200px;
-    font-size: 50px;
+    font-size: 70px;
     font-weight: bold;
     text-align: center;
+    -webkit-text-stroke-width: 2.5px; /* largura da borda */
+    -webkit-text-stroke-color: rgb(26, 25, 25); 
 }
 
 

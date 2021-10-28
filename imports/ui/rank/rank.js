@@ -52,6 +52,7 @@ Template.rank.events({
 
 Template.rank.helpers({
 
+
   logado(){
     return Meteor.user()
   },
