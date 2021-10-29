@@ -175,7 +175,41 @@ Template.task.helpers({
     const nome = Devedores.find({}).fetch()
     console.log(nome)
     return nome
+  },
+  selector() {
+   
+  },
+
+  tableSettings(){
+
+    return{
+
+      rowsPerPage: 5,
+      showNavigation: 'auto',
+      showColumnToggles: false,
+      showFilter: true,
+      fields:[  
+
+        {key: "nome", label: "Nome do devedor"},
+        {key: "pizzas", label: "Pizzas"},
+        {key: "somar", 
+        
+          fn: function(value){
+            return new Spacebars.SafeString('<button title="Adicionar" type="button" class="btn add col text-center" ><i class="fas fa-plus-circle" data-_id={{_id}} data-text={{pizzas}} style="font-size: 26px;"></i></button>')
+          }
+
+        }
+
+      ]
+
+    }
+
+
   }
+
+
+
+
 
 })
 

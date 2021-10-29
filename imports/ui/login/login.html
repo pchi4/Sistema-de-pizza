@@ -1,59 +1,64 @@
 <template name="login">
     <div class="y">
-    <div class="formTeste">
-        <h2 id="title-login">Bem vindo(a)</h2>
-        <div class="form-login">
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1 ex1">Matricula</label>
-                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Matricula                                                             &#xf007;" >
-                </div>
-                <div class="form-group mb-3">
-                    <label for="exampleInputPassword1">Senha</label>
-                    <input type="password" class="form-control pl-3" id="password" placeholder="Password                                                            &#xf023;" > 
-                </div>
-                <div>
-                    <button type="button"  class="btn btn-warning float-right" data-toggle="modal" data-target="#exampleModal">Cadastre-se</button>
-                    <button type="button" id="login" class="btn btn-success float-left">Entrar</button>
-                </div>
-            </form>
+        <div class="formTeste">
+            <div class="titulo">
+                <h2 id="title-login">Bem vindo(a)</h2>
+                <p id="title-login-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, porro sit! Voluptas</p>
+            </div>
+            <div class="form-login">
+                <div><i id="icon-pizza" class="fas fa-pizza-slice"></i></div>
+                <h2 id="acesso">Acesso</h2>
+                <form id="formulario">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1 ex1">Matricula</label>
+                        <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Matricula                                                             &#xf007;" >
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="exampleInputPassword1">Senha</label>
+                        <input type="password" class="form-control pl-3" id="password" placeholder="Password                                                            &#xf023;" > 
+                    </div>
+                    <div>
+                        <button type="button"  class="btn btn-warning float-right" data-toggle="modal" data-target="#exampleModal">Cadastre-se</button>
+                        <button type="button" id="login" class="btn btn-success float-left">Entrar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Criar conta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form form-group action="">
-                        <div class="form-group mb-3">
-                            <label>Nome do Usuario</label>
-                            <input class="form-control" id="name" placeholder="Digite seu nome completo">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label>Matricula</label>
-                            <input type="number" class="form-control" id="matricula" placeholder="Digite sua Matricula">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label>Senha</label>
-                            <input type="password" class="form-control" id="senha" placeholder="Password">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label>Confirma senha</label>
-                            <input type="password" class="form-control" id="confirmSenha" placeholder="Password">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" id="cadastrarUser">Salvar e sair</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Criar conta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form form-group action="">
+                            <div class="form-group mb-3">
+                                <label>Nome do Usuario</label>
+                                <input class="form-control" id="name" placeholder="Digite seu nome completo">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Matricula</label>
+                                <input type="number" class="form-control" id="matricula" placeholder="Digite sua Matricula">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Senha</label>
+                                <input type="password" class="form-control" id="senha" placeholder="Password">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Confirma senha</label>
+                                <input type="password" class="form-control" id="confirmSenha" placeholder="Password">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" id="cadastrarUser">Salvar e sair</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
 </template>

@@ -9,6 +9,8 @@ body {
    }
 
 .y{
+    display: flex;
+    justify-content: space-between;
     background-image: url(/img/pexels-athena-2180877.jpg);
     background-repeat: no-repeat;
     background-size:cover;
@@ -16,16 +18,22 @@ body {
     height: 100vh; 
 }
 
+.formTeste{
+    display: flex;
+    justify-content: space-between;
+}
+
 .form-login{
     background-color: rgba(0, 0, 0, 0.631);
     margin: 0 auto;
     color: white;
+    height: 100vh;
     font-size: 24px;
     width: 500px;
     border:  1px solid rgba(0, 0, 0, 0.097);
     padding: 40px 30px 70px 30px;
     border-radius: 5px;
-    margin-top: 200px;
+     margin-left: 340px;
     margin-bottom: 100px;
     box-shadow: 0 0 1em rgb(36, 34, 34);
 }
@@ -46,16 +54,48 @@ input#username{
     font-family: FontAwesome;
 }
 
+.titulo{
+    padding-top: 170px !important;
+    padding-left: 30px !important;
+}
 
 #title-login{
     
     color: rgb(240, 233, 231);
+    font-family: Poppins;
     padding-top: 200px;
     font-size: 70px;
     font-weight: bold;
     text-align: center;
-    -webkit-text-stroke-width: 2.5px; /* largura da borda */
-    -webkit-text-stroke-color: rgb(26, 25, 25); 
+ 
+}
+
+
+
+#title-login-2{
+    color: rgb(240, 233, 231);
+    font-family: Poppins;
+    padding-top: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#formulario{
+    padding-top: 50px;
+}
+
+#icon-pizza{
+    font-size: 200px;
+    text-align: center;
+    padding-left: 130px;
+    padding-top: 80px;
+}
+
+#acesso{
+    font-family: Poppins;
+    padding-top: 100px;
+     text-align: center;
 }
 
 

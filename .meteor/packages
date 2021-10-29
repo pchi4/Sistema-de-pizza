@@ -28,3 +28,5 @@ kadira:blaze-layout
 jquery@1.11.11
 iron:router
 session
+aldeed:tabular
+aslagle:reactive-table

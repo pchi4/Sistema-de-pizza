@@ -34,8 +34,11 @@
             </div>
         </div>
     </div>
-     <div class="k">
-        <div class="col-sm-5 table-t">
+     <div class="col-sm-12 text-center d-flex justify-content-center">
+        <div>
+            {{> reactiveTable id="tableTask" collection=devedores settings=tableSettings class="table table-striped" rowPerPage=7}}
+         </div>
+        <!-- <div class="col-sm-5 table-t">
             <div class="table table-responsive ">
                 <table id="myTable" class="table table-striped display">
                     <thead class="thead-dark thead-task">
@@ -64,7 +67,7 @@
                     </tbody>
                 </table> 
             </div>
-        </div>
+        </div> -->
     </div> 
     <div class="modal fade" id="modalDevedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -92,4 +95,3 @@
     </div>
 </div>
 </template>
-
