@@ -46,6 +46,7 @@ h5{
     font-size: 26px;
     padding-top: 10px;
 }
+
 .k{
     display: flex;
     justify-content: center;
@@ -96,20 +97,6 @@ span :hover {
     width: 100%;
 }
 
-#img-1{
-    width: 700px;
-    height: 500px;
-    z-index: -1;
-}
-
-
-#img-2{
-    width: 700px;
-    height: 500px;
-    z-index: -1;
-}
-
-
 td{
     font-size: 26px;
 }
@@ -118,12 +105,6 @@ tr td{
     color: black;
 }
 
-#teste{
-    text-decoration: none;
-    border: none;
-    color: white;
-    background-color: rgb(33, 33, 33)
-}
 
 .logout{
     padding: 10px 30px;

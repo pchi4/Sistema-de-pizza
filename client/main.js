@@ -9,7 +9,7 @@ import '../imports/ui/rank/rank'
 import '../imports/ui/task/task.js';
 import '../imports/ui/login/login.js'
 import '../imports/ui/startup/router.js';
-import '../imports/ui/dataTable/dataTable'
+
 
 
 
