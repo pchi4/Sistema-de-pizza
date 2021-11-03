@@ -80,63 +80,59 @@ Template.task.events({
 
   },
 
-  'click .add'(event){
+  'click #tableTask tbody tr'(event){
     event.preventDefault();
-    let{_id, text} = event.target.dataset;
-    
-    let count = parseInt(text)
-  
-        Devedores.update({_id}, {$set: {pizzas: count + 1}})
 
-        swal("Pizza adicionada com sucesso!", {
-          icon: "success",
-        }); 
-  },
+      switch(event.target.id){
+        case "adicionar": 
 
-  'click .sub'(event){
-    event.preventDefault();
-    let{_id, text} = event.target.dataset;
-    let count = parseInt(text)
+            var count = this.pizzas + 1
+            var _id = this._id
 
-        if(count > 0){
-          Devedores.update({_id}, {$set: {pizzas: count - 1}})
+            Devedores.update({_id}, {$set: {pizzas:count}})
 
-          swal("Pizza removida com sucesso!", {
-            icon: "success",
-          });
+            swal("Pizza adicionada com sucesso!", {
+                    icon: "success",
+            });
+            
+        break; 
 
+        case "subtrair":
+            var sub = this.pizzas - 1
+            var _id = this._id
+
+            Devedores.update({_id}, {$set: {pizzas:sub}})
+
+            swal("Pizza removida com sucesso!", {
+                       icon: "success",
+            });
+        break;
+
+        case "remover":
+          var _id = this._id
+
+            swal({
+              title: "Tem certeza que você quer excluir?",
+              icon: "warning",
+              buttons: ["Não","Sim"],
+            })
+            .then((willDelete) => {
+                if (willDelete) {
           
-        }else{
-          swal("Não é possivel valor negativo")
-        }
+                  Devedores.remove({ _id })
+                  swal("Usuario removido com sucesso!", {
+                    icon: "success",
+                  });
+                }
+              })
+              
+        break;
 
-  },
-
-  'click .remove'(event) {
-    event.preventDefault();
-
-    const _id = event.target.id
-
-    swal({
-      title: "Tem certeza que você quer excluir?",
-      icon: "warning",
-      buttons: ["Não","Sim"],
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-
-        Devedores.remove({ _id })
-        swal("Usuario removido com sucesso!", {
-          icon: "success",
-        });
-      } else {
-        
+        default: 
+        break;
       }
-    });
 
- 
   },
-
    'click .logout'(event){
 
     event.preventDefault();
@@ -187,29 +183,34 @@ Template.task.helpers({
       rowsPerPage: 5,
       showNavigation: 'auto',
       showColumnToggles: false,
-      showFilter: true,
-      fields:[  
-
-        {key: "nome", label: "Nome do devedor"},
-        {key: "pizzas", label: "Pizzas"},
-        {key: "somar", 
-        
+      showFilter: true, 
+      fields:[ 
+        {key: "nome", label: "Nome do devedor" , headerClass: 'testeClass'},
+        {key: "subtrair", label: "", 
+    
           fn: function(value){
-            return new Spacebars.SafeString('<button title="Adicionar" type="button" class="btn add col text-center" ><i class="fas fa-plus-circle" data-_id={{_id}} data-text={{pizzas}} style="font-size: 26px;"></i></button>')
-          }
-
-        }
-
+            return new 
+              Spacebars.SafeString('<button title="Subtrair" type="button" class="btn sub col text-center"><i class="fas fa-minus-square" id="subtrair" style="font-size: 26px;"></i></button>')
+          },
+        },
+        {key: "pizzas", label: "Pizzas", headerClass: 'testeClass'},
+        {key: "add", label: "", 
+    
+          fn: function(value){
+            return new 
+              Spacebars.SafeString('<button title="Adicionar" type="button" class="btn add col text-center" ><i class="fas fa-plus-circle" id="adicionar" style="font-size: 26px;"></i></button>')
+          },
+        },
+        {key: "somar", label: "Remover", 
+    
+        fn: function(value){
+          return new 
+            Spacebars.SafeString('<button title="Remove" type="button" class="btn remove"><i class="fas fa-trash-alt " id="remover" style="font-size: 26px; color:rgb(172, 36, 12);"></i></button>')
+        },
+      },
       ]
-
     }
-
-
   }
-
-
-
-
 
 })
 

@@ -5,17 +5,15 @@
 }
 body {
     background-color: rgb(240, 221, 221);
-    font-family: 'Poppins', sans-serif;
    }
 
 .y{
-    display: flex;
-    justify-content: space-between;
-    background-image: url(/img/pexels-athena-2180877.jpg);
+    width: 100%;
+    height: 100vh; 
+    background-image: url(/img/pexels-engin-akyurt-2619970.jpg);
     background-repeat: no-repeat;
     background-size:cover;
-     width: 100%;
-    height: 100vh; 
+     
 }
 
 .formTeste{
@@ -23,22 +21,22 @@ body {
     justify-content: space-between;
 }
 
+
 .form-login{
     background-color: rgba(0, 0, 0, 0.631);
-    margin: 0 auto;
     color: white;
     height: 100vh;
     font-size: 24px;
-    width: 500px;
+    width: 550px; 
     border:  1px solid rgba(0, 0, 0, 0.097);
-    padding: 40px 30px 70px 30px;
+    padding: 40px 44px 70px 30px;
     border-radius: 5px;
-     margin-left: 340px;
-    margin-bottom: 100px;
+     /* margin-left: 50px; */
     box-shadow: 0 0 1em rgb(36, 34, 34);
 }
 
 input#password {
+    /* width: 500px; */
     background-color: rgb(243, 237, 237);
     font-size: 20px;
     border: none;
@@ -55,26 +53,36 @@ input#username{
 }
 
 .titulo{
-    padding-top: 170px !important;
-    padding-left: 30px !important;
+    color: black;
+    font-family: Poppins;
+    margin: 0 auto;
+    padding-top: 80px !important;
+    /* padding-left: 30px !important; */
 }
 
 #title-login{
-    
-    color: rgb(240, 233, 231);
-    font-family: Poppins;
-    padding-top: 200px;
+    padding-bottom: 50px;
+    color: rgba(29, 27, 31, 0.987);
+    font-family: 'Poppins', sans-serif;
     font-size: 70px;
-    font-weight: bold;
+    font-weight: bolder;
     text-align: center;
  
 }
 
+#title-login-1{
+    color: rgba(80, 63, 228, 0.618);
+    font-family: 'Playfair Display', serif;
+    padding-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
 
 
 #title-login-2{
-    color: rgb(240, 233, 231);
-    font-family: Poppins;
+    color: rgb(27, 124, 120);
+    font-family: 'Playfair Display', serif;
     padding-top: 50px;
     font-size: 30px;
     font-weight: bold;
@@ -86,17 +94,99 @@ input#username{
 }
 
 #icon-pizza{
-    font-size: 200px;
     text-align: center;
-    padding-left: 130px;
-    padding-top: 80px;
 }
 
 #acesso{
     font-family: Poppins;
-    padding-top: 100px;
      text-align: center;
 }
+
+
+.pizzaa{
+    width: 300px;
+    transition: transform 8s;
+    animation: pizza 8s ease-in-out infinite;
+    transform-box: fill-box;
+    
+}
+
+.pizza{
+    transition: transform 4s;
+    animation: tirar-pizza 2s ease-in-out ;
+    animation-direction: alternate;  
+} 
+
+
+.pizza-3{
+    transition: transform 4s;
+    animation: tirar-pizza-2 4s ease-in-out;
+    animation-direction: alternate;  
+} 
+
+.pizza-5{
+    transition: transform 4s;
+    animation: tirar-pizza-3 6s ease-in-out ;
+    animation-direction: alternate;  
+} 
+
+
+@keyframes pizza{
+
+    from{
+        transform:rotateZ(0deg); 
+    }
+
+    to {
+        transform:rotatez(360deg); 
+    }
+}
+
+
+@keyframes tirar-pizza{
+
+   from{
+       transform:rotateZ(60deg);
+       opacity: 0;
+   }
+
+   to{
+       transform:rotateZ(360deg);
+       opacity: default;
+   }
+}
+
+
+@keyframes tirar-pizza-2{
+
+    from{
+       transform: rotateZ(120deg);
+        opacity: 0;
+    }
+ 
+    to{
+        transform:rotateZ(360deg);
+        opacity: default;
+    }
+ 
+ 
+ }
+
+ @keyframes tirar-pizza-3{
+
+    from{
+        transform:rotateZ(180deg);
+        opacity: 0;
+    }
+ 
+    to{
+        transform:rotateZ(360deg);
+        opacity: default;
+    }
+ 
+ 
+ }
+
 
 
 

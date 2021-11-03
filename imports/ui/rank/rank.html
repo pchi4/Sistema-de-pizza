@@ -6,13 +6,17 @@
             <button class="btn btn-primary mr-3" id="voltar"><i class="fas fa-arrow-left"></i></button>
              {{/if}}
              <div>
-                <button class="btn btn-primary mr-3" id="grafico" data-toggle="modal" data-target="#modalGrafico"> Grafico</button>
                 <span class="navbar-brand color">Devedores de Pizzas da CDS</span>
              </div>
         </nav>
     </div>   
     <h1 id="title-ranking">Ranking de dívidas</h1>
-    <div class="a">
+    <h4 id="title-ranking-2">Funcionários que não cumpriram com as regras <br> estão presente na tabela abaixo</h4>
+    <button class="btn btn-primary mr-3 float-none" id="grafico" data-toggle="modal" data-target="#modalGrafico"> Grafico</button>
+    <div class="reactTable col-sm-12 text-center tabela">
+        {{> reactiveTable id="tableRank" collection=devedores settings=tableSettings class="table table-striped" rowPerPage=7}}
+     </div>
+    <!-- <div class="a">
         <div data-spy="scroll" data-target="#navbar-exemplo2" data-offset="0" id="scroll" class="col-sm-5 table-t rank-tabela">
             <div class="table table-responsive ">
                 <table id="myTable" class="table">
@@ -39,7 +43,7 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -54,17 +58,17 @@
                 <form form-group action="">
                     <div class="form-group mb-3">
                         <label>Nome do Usuario</label>
-                        <input class="form-control" id="nameDev" data-_id={{devedor._id}} placeholder="Digite seu nome completo" value={{devedor.nome}}> 
+                        <input class="form-control" id="nameDev" placeholder="Digite seu nome completo"> 
                     </div>
                     <div class="form-group mb-3">
                         <label>Quantidade de pizzas</label>
-                        <input type="number" class="form-control" id="numberPizza" value={{devedor.pizzas}} data-_id={{devedor._id}} placeholder="Digite a Quantidade">
+                        <input type="number" class="form-control" id="numberPizza" placeholder="Digite a Quantidade">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary" id="editarDe">Editar</button>
+                <button type="button" class="btn btn-primary" id="editar">Editar</button>
             </div>
         </div>
     </div>

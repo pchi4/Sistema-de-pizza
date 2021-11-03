@@ -5,41 +5,53 @@
 }
 
  .t{
-    background-image: url(/img/rank.jpg);
+    background-image: url(/img/pexels-engin-akyurt-1552635.jpg);
     background-repeat: no-repeat;
     background-size:cover;
     padding-bottom: 100px;
     width: 100%;
-    height: 100vh; 
-    z-index: -1;
-} 
+    height: 100%; 
+ }
 
-table tbody td { color: rgb(49, 49, 49); }
+.a{
+padding-top: 10px;
+}
+
+table tbody td { color: rgb(231, 219, 219); }
 
 .nav-rank{
    
-    background-color: rgb(28, 27, 27) !important;
+    background-color: rgba(28, 27, 27, 0.37) !important;
     padding: 20px;
 }
 
 #title-ranking{
-    color: rgb(17, 17, 17);
-    font-size: 85px;
-    padding-top: 80px;
+    color: rgb(34, 33, 33);
+    font-family: 'Poppins', sans-serif;
+    font-size: 70px;
+    padding-top: 70px;
+    text-align: center;
+
+}
+
+#title-ranking-2{
+    color: rgb(0, 0, 0);
     text-align: center;
     font-weight: bolder;
-    -webkit-text-stroke-width: 2.5px; /* largura da borda */
-    -webkit-text-stroke-color: rgb(250, 240, 240); /* cor da borda */
+    padding-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+
 }
 
 .rank-tabela{
     margin: 0 auto;
-    margin-top: 180px;
+    margin-top: 100px;
 }
 
 
 .tbody-rank{
-
+    background-color: rgba(36, 35, 34, 0.493);
     display: block;
     float:left; 
     width:100%;  
@@ -56,6 +68,10 @@ table tbody td { color: rgb(49, 49, 49); }
     padding-right: 630px;
 }
 
+.tabela{
+    margin: 0 auto;
+    width: 900px;
+}
 
 .a{
 
@@ -64,14 +80,44 @@ table tbody td { color: rgb(49, 49, 49); }
     
 }
 
-#img-rank{
-    margin-top: 160px;
-    margin-left: 150px;
-    width: 500px;
-    height: 500px;
-}
 
 #voltar{
     font-size: 20px;
 }
 
+#grafico{
+    font-size: 20px;
+    border-radius: 50px;
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 45vw;
+}
+
+
+.reactTable{
+    padding-top: 40px;
+    margin: 0 auto;
+    width: 800px;
+}
+
+#tableRank{
+    color: black;
+}
+
+.rankClass{
+    color: black;
+}
+
+.clearfix{
+    color: black;
+    width: 900px;
+}
+
+.reactive-table-options{
+    color: black;
+}
+
+.input-group-addon{
+    color: black;
+    margin: 10px;
+}

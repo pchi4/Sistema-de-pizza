@@ -32,36 +32,52 @@ const canvas = (b,c) => {
 }
 
 Template.rank.events({
-  
+
   'click #editarDe'(event){
 
     event.preventDefault()
 
-    var {_id} = Session.get('devedor')
+
+
+
+  },
+
+  'click #tableRank tbody tr'(event){
+    event.preventDefault()
 
     var nameUser = document.getElementById('nameDev').value
     var numberPizza = document.getElementById('numberPizza').value 
 
-    let conv = parseInt(numberPizza)
-     
-    console.log(_id)
+    console.log(event.target)
 
-    if(nameUser && numberPizza){
+    switch(event.target.id){
+      
+      case "edit":
+        var _id = this._id
+        var teste = this.pizzas
 
-      nameUser = nameUser.toUpperCase();
-      console.log(nameUser, numberPizza)
-       Devedores.update({_id},{$set: {nome: nameUser, pizzas: conv}}) 
-  
-       swal({
-        title: "Usuario editado com sucesso",
-        icon: "success",
-      });
+       
 
-      $('#modalEdit').modal("hide")
-     }  
-  
-     
+      break;
+
+    }
+
   },
+  
+  // 'click #editar'(event){
+
+  //   event.preventDefault()
+
+  //     console.log(event)
+
+  //       // Devedores.update({_id},{$set: {nome: nameUser, pizzas: numberPizza}}) 
+      
+  //       // swal({
+  //       //     title: "Usuario editado com sucesso",
+  //       //     icon: "success",
+  //       // });
+  //   } 
+  // },
 
   'click button.userButton' (event) {
     event.preventDefault();
@@ -112,10 +128,33 @@ Template.rank.helpers({
 
   devedor() {
      return Session.get('devedor')
+  },
+
+  tableSettings(){
+
+    return{
+
+      rowsPerPage: 5,
+      showNavigation: 'auto', Teste: 'rankClass',
+      showColumnToggles: false,
+      showFilter: true, 
+      fields:[  
+
+        {key: "nome", label: "Nome do devedor" , headerClass: 'rankClass'},
+        {key: "pizzas", label: "Pizzas", headerClass: 'rankClass'},
+        {key: "edit", label: "Editar",  
+    
+          fn: function(value){
+            return new 
+              Spacebars.SafeString('<button title="Editar" type="button" id="edit" class="btn sub col text-center userButton"><i class="fas fa-user-edit" data-toggle="modal" data-target="#modalEdit" id="edit" style="font-size: 26px;"></i></button>')
+          },
+        }
+      ]
+    }
   }
+
   
 })
-
 
 Template.rank.onCreated(function () {
   Meteor.subscribe("devedores")

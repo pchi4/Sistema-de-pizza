@@ -19,6 +19,11 @@
    
 }
 
+
+.testeClass{
+    color: white;
+}
+
 .nav-task2{
     
     padding: 20px;
@@ -112,4 +117,14 @@ tr td{
 
 #title-cad{
     padding: 30px;
+}
+
+/* TABELA */
+
+.reactive-table-navigation{
+    color: white;
+}
+
+.reactive-table-options{
+    color: white;
 }
