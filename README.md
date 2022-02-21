@@ -1,11 +1,10 @@
-# Sistema de controle de pizzas da CDS 
-### Um pequeno sistema de controle de pizzas para quem não cumpriu com as regras imposto na CDS. 
+# CDS pizza control system
+### A small pizza control system for those who did not comply with the rules imposed by the CDS.
 
-## Projeto criado com: 
+## Project created with:
 - [x] Meteor.js,
 - [x] Node.js,
-- [x] HTML,
 - [x] Bootstrap
 
-## Administrador
-### O projeto tem o intuito de ser adminisrada por uma única pessoa com login. Ele(a) vai administrar todo o sistema. 
+## Administrator
+### The project is intended to be managed by a single person with login. He/she will manage the entire system.
